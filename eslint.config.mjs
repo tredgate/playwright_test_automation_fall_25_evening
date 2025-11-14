@@ -16,9 +16,10 @@ export default [
   // Specifická pravidla pro Playwright testy
   {
     ...playwright.configs["flat/recommended"],
-    files: ["tests/**/*.ts", "tests/**/*.js"],
+    files: ["tests/**/*.ts", "tests/**/*.js", "src/pages/**/*.ts"],
     rules: {
       ...playwright.configs["flat/recommended"].rules,
+      "playwright/expect-expect": "off",
       // Tady můžeš upravit nebo vypnout konkrétní pravidla, např.:
       // "playwright/no-wait-for-timeout": "off"
     },

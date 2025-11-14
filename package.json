@@ -17,6 +17,7 @@
   "homepage": "https://github.com/tredgate/playwright_test_automation_fall_25_evening#readme",
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@faker-js/faker": "^10.1.0",
     "@playwright/test": "^1.56.1",
     "@types/node": "^24.10.0",
     "eslint": "^9.39.1",
