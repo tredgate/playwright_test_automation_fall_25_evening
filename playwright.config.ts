@@ -23,13 +23,23 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: "html",
+  timeout: 60_000, // ? Timeout maximální délky testu
+  globalTimeout: 1 * 60 * 60 * 1000, // ? Maximální délka trvání jednoho běhu testů (npx playwright test)
+  expect: {
+    timeout: 7_000, // ? Timeout na maximální limit čekání v rámci assertu
+  },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    actionTimeout: 7_000, // ? Limit na maximální trvání akcí (click, fill...)
+    navigationTimeout: 30_000, // ? Maximální délka načítání stránky při použití goto()
+    // ignoreHTTPSErrors: true, // ! Vypnutí kontrol certifikátů v prohlížeči. OPATRNĚ! NIKDY NE NA PRODUKCI!
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    screenshot: "only-on-failure",
+    video: "off",
+    trace: "retain-on-failure",
   },
 
   /* Configure projects for major browsers */
