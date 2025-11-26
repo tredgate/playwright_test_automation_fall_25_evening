@@ -1,5 +1,6 @@
 import { expect, Locator, Page } from "@playwright/test";
 import { LoginPage } from "./login_page.ts";
+import { ProjectsPage } from "./projects_page.ts";
 
 export class DashboardPage {
   readonly page: Page;
@@ -7,6 +8,7 @@ export class DashboardPage {
   readonly logoutButton: Locator;
   readonly bellButton: Locator;
   readonly appNameHeader: Locator;
+  readonly projectsButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -14,6 +16,7 @@ export class DashboardPage {
     this.logoutButton = page.locator("#logout");
     this.bellButton = page.locator("#user_notifications_report");
     this.appNameHeader = page.locator(".navbar-brand");
+    this.projectsButton = page.locator("#Projects");
   }
 
   async clickProfile() {
@@ -35,5 +38,10 @@ export class DashboardPage {
       .soft(this.appNameHeader, "Application Header have Name")
       .toHaveText(appName);
     return this;
+  }
+
+  async clickProjects() {
+    await this.projectsButton.click();
+    return new ProjectsPage(this.page);
   }
 }
