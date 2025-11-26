@@ -6,12 +6,14 @@ export class DashboardPage {
   readonly profileButton: Locator;
   readonly logoutButton: Locator;
   readonly bellButton: Locator;
+  readonly appNameHeader: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.profileButton = page.locator("#user_dropdown");
     this.logoutButton = page.locator("#logout");
     this.bellButton = page.locator("#user_notifications_report");
+    this.appNameHeader = page.locator(".navbar-brand");
   }
 
   async clickProfile() {
@@ -23,5 +25,15 @@ export class DashboardPage {
   async clickLogout() {
     await this.logoutButton.click();
     return new LoginPage(this.page);
+  }
+
+  async dashboardAsserts(appName: string) {
+    await expect
+      .soft(this.profileButton, "Profile Button is Visible")
+      .toBeVisible();
+    await expect
+      .soft(this.appNameHeader, "Application Header have Name")
+      .toHaveText(appName);
+    return this;
   }
 }
