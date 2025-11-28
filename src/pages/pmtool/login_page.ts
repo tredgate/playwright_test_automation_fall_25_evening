@@ -47,7 +47,7 @@ export class LoginPage {
   }
 
   async login(username: string, password: string): Promise<DashboardPage> {
-    await test.step("Login to Pmtoll", async () => {
+    await test.step("Login to Pmtool", async () => {
       await this.fillUsername(username);
       await this.fillPassword(password);
       await this.clickLogin();
@@ -57,6 +57,6 @@ export class LoginPage {
 
   async pageHeaderHasText(headerText: string): Promise<LoginPage> {
     await expect(this.pageHeader).toHaveText(headerText);
-    return this
+    return this;
   }
 }

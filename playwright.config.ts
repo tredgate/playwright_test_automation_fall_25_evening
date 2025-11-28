@@ -48,7 +48,17 @@ export default defineConfig({
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
     },
-
+    // * Příklad nastavení vlastního projektu s nízkým rozlišením
+    // {
+    //   name: "chromium:low-res",
+    //   use: {
+    //     ...devices["Desktop Chrome"],
+    //     viewport: {
+    //       width: 800,
+    //       height: 600,
+    //     },
+    //   },
+    // },
     {
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
@@ -62,12 +72,12 @@ export default defineConfig({
 
     /* Test against mobile viewports. */
     // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
+    //   name: "Mobile Chrome",
+    //   use: { ...devices["Pixel 5"] },
     // },
     // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
+    //   name: "Mobile Safari",
+    //   use: { ...devices["iPhone 12"] },
     // },
 
     /* Test against branded browsers. */
