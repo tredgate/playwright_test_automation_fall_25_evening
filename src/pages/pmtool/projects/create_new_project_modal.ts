@@ -49,7 +49,7 @@ export class CreateNewProjectModal {
       '//div[@data-testid="Attachments"]/../../label'
     );
     this.attachmentsButton = page.locator(
-      '//div[@data-testid="Attachments"]//input[contains(@id,"uploadifive_attachments_upload")]'
+      '//div[@data-testid="Attachments"]//div[contains(@id,"uploadifive-uploadifive_attachments_upload")][contains(@class, "btn")]'
     );
     this.closeButton = page.locator(".btn-close");
     this.nameValidationDiv = page.locator('[data-testid="Name"] label.error');
