@@ -33,39 +33,3 @@ test("Response Body Assert", async ({ request }) => {
   );
   expect(typeof responseBody.id, "responseBody.id is a number").toBe("number");
 });
-
-/*
-Cvičení (⌛7:00)
-Vytvořte nový test, který otestuje request:
-Složka: tests/exercise
-Test: api_request_asserts_exercise.spec.ts
-Metoda: GET
-Url: https://tegb-backend-877a0b063d29.herokuapp.com/eshop/4
-
-Zkontrolujte:
-Body obsahuje property:
-userId
-Datový typ:
-active: number
-Hodnoty:
-username == petrfifka
-
-Response body:
-{
-    "userId": 4,
-    "username": "petrfifka",
-    "email": "petr.fifka@tredgate.cz",
-    "createdAt": "2023-10-24",
-    "updatedAt": null,
-    "active": 1
-}
-Výzva
-Vytvořte volání GET https://api.pokemontcg.io/v2/cards/xy1-1
-Otestujte:
-Název Pokémona == Venusaur-EX
-artist == Eske Yoshinob
-attacks:
-name == Poison Powder
-name == Jungle Hammer
-
-*/
