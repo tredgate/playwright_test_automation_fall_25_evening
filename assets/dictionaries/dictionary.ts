@@ -9,7 +9,9 @@ export const pmtoolTexts = {
     lostPassword: "Password Forgotten?",
     loginButton: "Login",
   },
-  dashboard: {},
+  dashboard: {
+    appName: "TEG Project Management",
+  },
   projects: {},
   general: {},
 };
