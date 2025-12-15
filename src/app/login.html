@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Login - Modern App</title>
+   <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+   <div class="background-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+   </div>
+
+   <div class="login-container">
+      <div class="login-card">
+         <div class="logo-section">
+            <div class="logo-circle">
+               <svg width="50" height="50" viewBox="0 0 50 50">
+                  <circle cx="25" cy="25" r="20" fill="none" stroke="url(#gradient)" stroke-width="3" />
+                  <path d="M 25 15 L 25 35 M 15 25 L 35 25" stroke="url(#gradient)" stroke-width="3"
+                     stroke-linecap="round" />
+                  <defs>
+                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                     </linearGradient>
+                  </defs>
+               </svg>
+            </div>
+            <h1 class="app-title">Welcome Back</h1>
+            <p class="app-subtitle">Please login to your account</p>
+         </div>
+
+         <form id="loginForm" class="login-form">
+            <div id="errorMessage" class="error-message hidden"></div>
+            <div id="successMessage" class="success-message hidden"></div>
+
+            <div class="form-group">
+               <label for="username" class="form-label">Username</label>
+               <div class="input-wrapper">
+                  <svg class="input-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                     <path
+                        d="M10 10C12.7614 10 15 7.76142 15 5C15 2.23858 12.7614 0 10 0C7.23858 0 5 2.23858 5 5C5 7.76142 7.23858 10 10 10Z"
+                        fill="currentColor" />
+                     <path d="M10 12C4.477 12 0 14.686 0 18V20H20V18C20 14.686 15.523 12 10 12Z" fill="currentColor" />
+                  </svg>
+                  <input type="text" id="username" name="username" class="form-input" placeholder="Enter your username"
+                     autocomplete="username">
+               </div>
+            </div>
+
+            <div class="form-group">
+               <label for="password" class="form-label">Password</label>
+               <div class="input-wrapper">
+                  <svg class="input-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                     <path
+                        d="M15 8H14V6C14 3.79086 12.2091 2 10 2C7.79086 2 6 3.79086 6 6V8H5C3.89543 8 3 8.89543 3 10V16C3 17.1046 3.89543 18 5 18H15C16.1046 18 17 17.1046 17 16V10C17 8.89543 16.1046 8 15 8ZM8 6C8 4.89543 8.89543 4 10 4C11.1046 4 12 4.89543 12 6V8H8V6Z"
+                        fill="currentColor" />
+                  </svg>
+                  <input type="password" id="password" name="password" class="form-input"
+                     placeholder="Enter your password" autocomplete="current-password">
+               </div>
+            </div>
+
+            <div class="form-options">
+               <label class="remember-me">
+                  <input type="checkbox" id="rememberMe" name="rememberMe">
+                  <span>Remember me</span>
+               </label>
+               <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+
+            <button type="submit" id="loginButton" class="login-button">
+               <span id="buttonText">Sign In</span>
+               <span id="buttonLoader" class="loader hidden"></span>
+            </button>
+
+            <div class="signup-section">
+               <p>Don't have an account? <a href="#" class="signup-link">Sign up</a></p>
+            </div>
+         </form>
+      </div>
+   </div>
+
+   <script src="login.js"></script>
+</body>
+
+</html>

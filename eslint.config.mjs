@@ -37,6 +37,7 @@ export default [
       "**/*.config.cjs",
       "**/*.config.mjs",
       "**/*.d.ts",
+      "**/src/app/**/*.js", // Browser scripts for prototype app
     ],
   },
 ];
